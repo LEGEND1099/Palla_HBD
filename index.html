@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#7d2331" />
+    <meta
+      name="description"
+      content="A handmade digital scrapbook celebrating three years of us."
+    />
+    <title>Three Years of Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="cover-is-closed">
+    <div class="paper-noise" aria-hidden="true"></div>
+
+    <header class="cover" id="top">
+      <div class="cover__corner cover__corner--top" aria-hidden="true"></div>
+      <div class="cover__corner cover__corner--bottom" aria-hidden="true"></div>
+      <span class="cover__scribble cover__scribble--one" aria-hidden="true">love, always</span>
+      <span class="cover__scribble cover__scribble--two" aria-hidden="true">xoxo</span>
+
+      <div class="cover__content">
+        <p class="eyebrow">A little birthday scrapbook for</p>
+        <h1 id="cover-name">Sunshine</h1>
+        <div class="cover__rule" aria-hidden="true">
+          <span></span><span class="cover__heart">&hearts;</span><span></span>
+        </div>
+        <p class="cover__subtitle">three years, a thousand tiny moments,<br />and my favourite person.</p>
+        <button class="ribbon-button" id="open-scrapbook" type="button">
+          <span>Open our story</span>
+          <span class="ribbon-button__arrow" aria-hidden="true">&darr;</span>
+        </button>
+      </div>
+
+      <div class="cover__date-stamp" aria-hidden="true">
+        <span>Vol. 03</span>
+        <strong>US</strong>
+        <span>made with love</span>
+      </div>
+    </header>
+
+    <nav class="chapter-nav" aria-label="Scrapbook chapters">
+      <a href="#year-one" data-chapter="year-one">
+        <span>01</span><span class="nav-label nav-label--full">The beginning</span><span class="nav-label nav-label--short">Begin</span>
+      </a>
+      <a href="#year-two" data-chapter="year-two">
+        <span>02</span><span class="nav-label nav-label--full">The adventure</span><span class="nav-label nav-label--short">Explore</span>
+      </a>
+      <a href="#year-three" data-chapter="year-three">
+        <span>03</span><span class="nav-label nav-label--full">Right now</span><span class="nav-label nav-label--short">Now</span>
+      </a>
+      <a href="#birthday" data-chapter="birthday">
+        <span>&hearts;</span><span class="nav-label nav-label--full">For you</span><span class="nav-label nav-label--short">You</span>
+      </a>
+    </nav>
+
+    <main>
+      <section class="opening-note page-section" aria-labelledby="opening-title">
+        <div class="opening-note__postcard reveal">
+          <p class="handwritten">Hey, you.</p>
+          <h2 id="opening-title">This is our story,<br /><em>so far.</em></h2>
+          <p id="opening-copy">
+            I wanted to make you something that feels a little like us: warm, slightly silly,
+            full of memories, and impossible to fit into one neat little box.
+          </p>
+          <div class="postcard-signoff">
+            <span>Turn the page</span>
+            <span aria-hidden="true">&darr;</span>
+          </div>
+        </div>
+
+        <aside class="opening-note__counter reveal" aria-label="Time together">
+          <span class="counter__tape" aria-hidden="true"></span>
+          <p>It has been</p>
+          <strong id="days-together">1,095</strong>
+          <p>days of choosing you</p>
+          <span class="counter__fineprint">(and I would do it all over again)</span>
+        </aside>
+      </section>
+
+      <div id="chapters"></div>
+
+      <section class="birthday page-section" id="birthday" aria-labelledby="birthday-title">
+        <div class="birthday__stars" aria-hidden="true"></div>
+        <div class="birthday__content reveal">
+          <p class="eyebrow">One last page</p>
+          <h2 id="birthday-title">Happy birthday,<br /><em id="birthday-name">beautiful.</em></h2>
+          <p>
+            There is one more note tucked into the back of this scrapbook.<br />
+            This one is just for you.
+          </p>
+          <button class="wax-seal" id="reveal-letter" type="button">
+            <span aria-hidden="true">&hearts;</span>
+            <span class="sr-only">Reveal your birthday letter</span>
+          </button>
+          <p class="wax-seal__hint">tap the seal</p>
+        </div>
+
+        <article class="final-letter" id="final-letter" aria-hidden="true">
+          <button class="final-letter__close" type="button" aria-label="Close birthday letter">&times;</button>
+          <p class="handwritten">My favourite person,</p>
+          <div id="letter-copy"></div>
+          <p class="final-letter__signoff">Always yours,<br /><span id="signature">Deepak</span> &hearts;</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>Three years down</span>
+      <span class="footer-heart" aria-hidden="true">&hearts;</span>
+      <span>forever to go</span>
+    </footer>
+
+    <dialog class="memory-modal" id="memory-modal">
+      <button class="memory-modal__close" type="button" aria-label="Close memory">&times;</button>
+      <figure>
+        <div class="memory-modal__media">
+          <img id="modal-image" src="" alt="" />
+          <video id="modal-video" controls playsinline preload="metadata" hidden></video>
+          <button class="memory-modal__arrow memory-modal__arrow--previous" type="button" aria-label="Previous photo or video">&larr;</button>
+          <span class="memory-modal__count" aria-live="polite">1 / 1</span>
+          <button class="memory-modal__arrow memory-modal__arrow--next" type="button" aria-label="Next photo or video">&rarr;</button>
+        </div>
+        <figcaption>
+          <span id="modal-date"></span>
+          <h3 id="modal-title"></h3>
+          <p id="modal-caption"></p>
+        </figcaption>
+      </figure>
+    </dialog>
+
+    <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

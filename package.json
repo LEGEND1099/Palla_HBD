@@ -1,0 +1,11 @@
+{
+  "name": "three-years-scrapbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An interactive birthday scrapbook celebrating three years together.",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "check": "node --check script.js && node --check server.js"
+  }
+}
